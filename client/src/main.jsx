@@ -21,7 +21,8 @@ import {
     GalleryPage,
     UpcomingprojectsPage,
     CreateEvent,
-    GetEventPage
+    GetEventPage,
+    GetEvent
 } from "./Pages/index.js";
 
 
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
             <Route path="upcoming-projects" element={<UpcomingprojectsPage />} />
             <Route path="create-event" element={<CreateEvent />} />
             <Route path="getEvent" element={<GetEventPage/>} />
+            <Route path="getEvent2" element={<GetEvent/>} />
         </Route>
     )
 );
