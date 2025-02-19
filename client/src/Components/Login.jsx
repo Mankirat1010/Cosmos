@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../General/Button.jsx";
+import { login } from "../Services/authService.jsx";
 
 export default function Login() {
+    const [user, setUser] = useState("");
     const [loading, setLoading] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [error, setError] = useState("");
@@ -22,15 +24,20 @@ export default function Login() {
     };
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setDisabled(true);
+        setError("");
         try {
-            e.preventDefault();
-            setLoading(true);
-            setDisabled(true);
-            navigate("/");
-            console.log({
-                searchInput: inputs.searchInput,
-                password: inputs.password,
-            });
+            const response = await login(inputs);
+            if (response && !response.message) {
+                // setUser(response);
+                console.log("sucess")
+                navigate("/");
+            } else {
+                // setUser(null);
+                setError(response.message);
+            }
         } catch (err) {
             console.log(err);
             navigate("/server-error");
@@ -47,10 +54,6 @@ export default function Login() {
             setDisabled(false);
         }
     };
-
-    const handleBlur=()=>{
-        //do something
-    }
 
     const inputFields = [
         {
@@ -87,7 +90,6 @@ export default function Login() {
                 name={field.name}
                 id={field.id}
                 placeholder={field.placeholder}
-                onBlur={handleBlur}
                 onChange={handleChange}
                 required={field.required}
                 className="outline-none border-1 border-gray-700 p-2 rounded-md"
@@ -104,13 +106,17 @@ export default function Login() {
                 className="bg-blue-100 p-5 rounded-lg shadow-lg"
             >
                 {inputElements}
-                <div className="text-center">
-                    <Button
-                        disabled={disabled}
-                        onMouseOver={handleMouseOver}
-                        btnText={loading ? "Loading..." : "Login"}
-                    />
-                </div>
+                {user ? (
+                    ""
+                ) : (
+                    <div className="text-center">
+                        <Button
+                            disabled={disabled}
+                            onMouseOver={handleMouseOver}
+                            btnText={loading ? "Loading..." : "Login"}
+                        />
+                    </div>
+                )}
                 <div className="text-center mt-3 text-sm">
                     Don't have an account ?{" "}
                     <Link to={"/register"} className="text-blue-900">
