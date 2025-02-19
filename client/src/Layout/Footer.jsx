@@ -46,40 +46,40 @@ export default function Footer() {
           </p>
         </div>
 
-                {/* 1/3 width for the third section (aligning the text to the left like div 2) */}
-                <div className="w-1/3 pr-8">
-                    <p className="text-gray-400 text-2xl">Follow EVENTIFIER</p>
-                    <div className="flex space-x-6 mt-2">
-                        <a
-                            href="https://facebook.com"
-                            className="text-gray-400 hover:text-pink-500"
-                        >
-                            <FaFacebook size={30} />
-                        </a>
-                        <a
-                            href="https://instagram.com"
-                            className="text-gray-400 hover:text-pink-500"
-                        >
-                            <FaInstagram size={30} />
-                        </a>
-                        <a
-                            href="https://twitter.com"
-                            className="text-gray-400 hover:text-pink-500"
-                        >
-                            <FaTwitter size={30} />
-                        </a>
-                        <a
-                            href="https://youtube.com"
-                            className="text-gray-400 hover:text-pink-500"
-                        >
-                            <FaYoutube size={30} />
-                        </a>
-                    </div>
         {/* 1/3 width for the second section */}
         <div className="w-1/3 pr-8 flex justify-center">
           <ul className="space-y-2 text-left">{tabElements}</ul>
         </div>
 
+        {/* 1/3 width for the third section (aligning the text to the left like div 2) */}
+        <div className="w-1/3 pr-8">
+          <p className="text-gray-400 text-2xl">Follow EVENTIFIER</p>
+          <div className="flex space-x-6 mt-2">
+            <a
+              href="https://facebook.com"
+              className="text-gray-400 hover:text-pink-500"
+            >
+              <FaFacebook size={30} />
+            </a>
+            <a
+              href="https://instagram.com"
+              className="text-gray-400 hover:text-pink-500"
+            >
+              <FaInstagram size={30} />
+            </a>
+            <a
+              href="https://twitter.com"
+              className="text-gray-400 hover:text-pink-500"
+            >
+              <FaTwitter size={30} />
+            </a>
+            <a
+              href="https://youtube.com"
+              className="text-gray-400 hover:text-pink-500"
+            >
+              <FaYoutube size={30} />
+            </a>
+          </div>
 
           {/* New Links Below Social Icons */}
           <div className="mt-6">

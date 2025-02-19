@@ -74,21 +74,20 @@ export default function CreateEvent() {
 
                     {/* Event Type */}
                     <div className="form-group">
-                        <label htmlFor="type" className="block text-lg text-gray-700 font-medium">Event Type</label>
+                        <label htmlFor="category" className="block text-lg text-gray-700 font-medium">Event Category</label>
                         <select
-                            name="type"
-                            id="type"
-                            value={formData.type}
+                            name="category"
+                            id="category"
+                            value={formData.category}
                             onChange={handleChange}
                             required
                             className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
                             <option value="">Select Event Type</option>
-                            <option value="Conference">Conference</option>
-                            <option value="Workshop">Workshop</option>
-                            <option value="Seminar">Seminar</option>
-                            <option value="Party">Party</option>
-                            <option value="Miscellaneous">Miscellaneous</option>
+                            <option value="Technical">Technical</option>
+                            <option value="Cultural">Cultural</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Academic">Academic</option>
                         </select>
                     </div>
 
@@ -122,30 +121,15 @@ export default function CreateEvent() {
 
                     {/* Location */}
                     <div className="form-group">
-                        <label htmlFor="location" className="block text-lg text-gray-700 font-medium">Event Location</label>
+                        <label htmlFor="location" className="block text-lg text-gray-700 font-medium">Venue</label>
                         <input
                             type="text"
-                            name="location"
-                            id="location"
-                            value={formData.location}
+                            name="venue"
+                            id="venue"
+                            value={formData.venue}
                             onChange={handleChange}
                             required
                             placeholder="Enter event location"
-                            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
-
-                    {/* Capacity */}
-                    <div className="form-group">
-                        <label htmlFor="capacity" className="block text-lg text-gray-700 font-medium">Capacity</label>
-                        <input
-                            type="number"
-                            name="capacity"
-                            id="capacity"
-                            value={formData.capacity}
-                            onChange={handleChange}
-                            required
-                            placeholder="Enter max capacity"
                             className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
@@ -162,22 +146,8 @@ export default function CreateEvent() {
                         />
                     </div>
 
-                    {/* Registration Link */}
-                    <div className="form-group">
-                        <label htmlFor="registrationLink" className="block text-lg text-gray-700 font-medium">Registration Link</label>
-                        <input
-                            type="url"
-                            name="registrationLink"
-                            id="registrationLink"
-                            value={formData.registrationLink}
-                            onChange={handleChange}
-                            placeholder="Enter registration link (optional)"
-                            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
-
                     {/* Organizer Contact */}
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <label htmlFor="contact" className="block text-lg text-gray-700 font-medium">Organizer Contact</label>
                         <input
                             type="text"
@@ -189,35 +159,20 @@ export default function CreateEvent() {
                             placeholder="Enter contact info"
                             className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                    </div>
+                    </div> */}
 
                     {/* Ticket Price */}
                     <div className="form-group">
-                        <label htmlFor="ticketPrice" className="block text-lg text-gray-700 font-medium">Ticket Price (optional)</label>
+                        <label htmlFor="ticketPrice" className="block text-lg text-gray-700 font-medium">registrationFee</label>
                         <input
                             type="number"
-                            name="ticketPrice"
-                            id="ticketPrice"
-                            value={formData.ticketPrice}
+                            name="registrationFee"
+                            id="registrationFee"
+                            value={formData.registrationFee}
                             onChange={handleChange}
                             placeholder="Enter ticket price"
                             className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                    </div>
-
-                    {/* Event Status */}
-                    <div className="form-group">
-                        <label htmlFor="status" className="block text-lg text-gray-700 font-medium">Event Status</label>
-                        <select
-                            name="status"
-                            id="status"
-                            value={formData.status}
-                            onChange={handleChange}
-                            className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        >
-                            <option value="draft">Draft</option>
-                            <option value="published">Published</option>
-                        </select>
                     </div>
 
                     {/* Submit Button */}

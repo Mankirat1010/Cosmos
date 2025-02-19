@@ -14,6 +14,8 @@ import CreateEvent from "./CreateEvent.jsx";
 
 import GetEventPage from "./getEventPage.jsx"; // Import the GetEventPage component
 
+import GetEvent from "./GetEvent.jsx"
+
 
 export {
     AboutPage,
@@ -27,9 +29,10 @@ export {
     GalleryPage,
     UpcomingprojectsPage,
 
-    CreateEvent
+    CreateEvent,
 
     EventsPage,
-    GetEventPage
+    GetEventPage,
+    GetEvent
 
 }
