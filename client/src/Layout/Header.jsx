@@ -5,7 +5,7 @@ export default function Header() {
         { tab: "Home", to: "" },
         { tab: "About", to: "about" },
         { tab: "Gallery", to: "gallery" },
-        { tab: "News", to: "news" },
+        { tab: "Events", to: "events" },
         { tab: "Blogs", to: "blogs" },
         { tab: "Upcoming Projects", to: "upcoming-projects" },
         { tab: "Contact", to: "contact" },

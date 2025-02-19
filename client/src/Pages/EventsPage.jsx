@@ -1,128 +1,127 @@
-export default function NewsPage() {
+export default function EventsPage() {
   return (
     <div className="bg-gray-100 py-12">
-      {/* News Page Container */}
+      {/* College Events Page Container */}
       <div className="container mx-auto px-6">
         {/* Header */}
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800">Latest News</h1>
+          <h1 className="text-4xl font-bold text-gray-800">
+             College Events
+          </h1>
           <p className="text-lg text-gray-600">
-            Stay updated with the latest news from Cosmos
+            Stay updated with the latest workshops, fests, and seminars
+            happening in our college!
           </p>
         </header>
 
-        {/* Featured News */}
+        {/* Featured Events */}
         <section className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Featured News Item 1 */}
+            {/* Featured Event 1 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                src="https://media.licdn.com/dms/image/D5612AQHsC0z7IUstDA/article-cover_image-shrink_720_1280/0/1702035235425?e=2147483647&v=beta&t=kFZ-A_kmdY1SOwThNWNDY-WSDlnzNaWsVC0VYbJnjmA"
-                alt="Featured News 1"
+                src="https://images.shiksha.com/mediadata/images/articles/1669025984phpy1NQ5p.jpeg"
+                alt="Tech Fest 2025"
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-4">
-                  Exciting New Updates in Cosmos
-                </h2>
+                <h2 className="text-2xl font-semibold mb-4">Tech Fest 2025</h2>
                 <p className="text-gray-700 mb-4">
-                  Discover the latest advancements in the Cosmos platform and
-                  what it means for developers.
+                  Join the biggest tech fest of the year featuring coding
+                  hackathons, robotics competitions, and AI workshops.
                 </p>
                 <a href="#" className="text-blue-500 hover:underline">
-                  Read More
+                  Register Now
                 </a>
               </div>
             </div>
 
-            {/* Featured News Item 2 */}
+            {/* Featured Event 2 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                src="https://www.apu.apus.edu/images/site/apu/why-should-we-explore-space.jpeg"
-                alt="Featured News 2"
+                src="https://i0.wp.com/examsdaily.in/wp-content/uploads/2023/06/National-Seminar-2023.jpg?fit=1024%2C535&ssl=1"
+                alt="National Seminar on AI"
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
                 <h2 className="text-2xl font-semibold mb-4">
-                  New Space Exploration Features in Cosmos
+                  National Seminar on AI
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  Explore new space exploration features powered by the Cosmos
-                  platform, now available to the public.
+                  A panel discussion with top researchers in AI and machine
+                  learning. Gain insights from industry experts!
                 </p>
                 <a href="#" className="text-blue-500 hover:underline">
-                  Read More
+                  Learn More
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Recent Articles */}
+        {/* Recent Events */}
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-gray-800 mb-6">
-            Recent Articles
+            Recent Events
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Article Item */}
+            {/* Recent Event 1 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                src="https://media.licdn.com/dms/image/v2/D5612AQGjeO80k4CHuQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1697928778518?e=2147483647&v=beta&t=7JKrIH5kkwUkJTrXlEM0yixlrtLSpx3O3GpIZXmkwJg"
-                alt="Article 1"
+                src="https://www.alphonsacollege.in/wp-content/uploads/2019/07/college-sports-meet.png"
+                alt="Annual Sports Meet"
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
                 <h4 className="text-xl font-semibold mb-2">
-                  Cosmos and AI: The Future of Exploration
+                  Annual Sports Meet 2024
                 </h4>
                 <p className="text-gray-700 mb-4">
-                  AI is revolutionizing the way we explore space. Here's how
-                  Cosmos is making a difference.
+                  A thrilling competition among students in various sports
+                  including football, basketball, and athletics.
                 </p>
                 <a href="#" className="text-blue-500 hover:underline">
-                  Read More
+                  View Highlights
                 </a>
               </div>
             </div>
 
-            {/* Article Item */}
+            {/* Recent Event 2 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1IGV5yZ8ixDf-39EYcobJPzzgd-xDZcywjQ&s"
-                alt="Article 2"
+                src="https://blog.bizzabo.com/hubfs/College%20Events.jpg"
+                alt="Cultural Fest 2024"
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
                 <h4 className="text-xl font-semibold mb-2">
-                  Breaking Barriers in Space Research
+                  Cultural Fest 2024
                 </h4>
                 <p className="text-gray-700 mb-4">
-                  Breaking down the most recent discoveries in space research
-                  and their significance for humanity.
+                  A grand celebration of music, dance, and drama with
+                  participation from colleges across the country.
                 </p>
                 <a href="#" className="text-blue-500 hover:underline">
-                  Read More
+                  See More
                 </a>
               </div>
             </div>
 
-            {/* Article Item */}
+            {/* Recent Event 3 */}
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
               <img
-                src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/642450c002b7b4001dfd86e2.png"
-                alt="Article 3"
+                src="https://www.inspiria.edu.in/blog/wp-content/uploads/2021/09/Internship-Programs-for-Students-2021.jpg"
+                alt="Career Fair 2024"
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h4 className="text-xl font-semibold mb-2">
-                  Advancements in Space Navigation
-                </h4>
+                <h4 className="text-xl font-semibold mb-2">Career Fair 2024</h4>
                 <p className="text-gray-700 mb-4">
-                  Explore the latest advancements in space navigation
-                  technology, powered by Cosmos' new updates.
+                  Explore job opportunities, interact with recruiters, and
+                  attend career-building workshops.
                 </p>
                 <a href="#" className="text-blue-500 hover:underline">
-                  Read More
+                  Find Opportunities
                 </a>
               </div>
             </div>
