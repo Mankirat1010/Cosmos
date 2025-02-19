@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import  {Schema, model} from "mongoose";
 
 import bcrypt from 'bcrypt'
 
@@ -69,6 +68,4 @@ userSchema.pre('save', async function (next){
 //     console.log(doc, "Document saved successfully!")
 // })
 
-const User = mongoose.model("User", userSchema);
-
-export { User };
+export const User = model("User", userSchema);

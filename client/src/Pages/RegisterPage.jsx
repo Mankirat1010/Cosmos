@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../General/Button.jsx";
 import errorHandling from "../Utils/errorHandling.js";
+import { register } from "../Services/authService.jsx";
 
 export default function RegisterPage() {
     const [loading, setLoading] = useState(false);
@@ -24,6 +25,7 @@ export default function RegisterPage() {
         contact: "",
         password: "",
         confirmPassword: "",
+        role: "participant", // default role is participant
     });
 
     const navigate = useNavigate();
@@ -55,21 +57,21 @@ export default function RegisterPage() {
     };
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setDisabled(true);
+        setErrors(null);
         try {
-            e.preventDefault();
-            setLoading(true);
-            setDisabled(true);
-            setErrors(null);
-            navigate("/");
-            console.log({
-                firstName: inputs.firstName,
-                lastName: inputs.lastName,
-                userName: inputs.userName,
-                email: inputs.email,
-                contact: inputs.contact,
-                password: inputs.password,
-                confirmPassword: inputs.confirmPassword,
-            });
+
+            const response = await register(inputs);
+            if (response && !response.message) {
+                console.log("sucess")    
+                navigate("/");
+            } else {
+                setUser(null);
+                setErrors(response.message);
+            }
+
         } catch (err) {
             console.log(err);
             navigate("/server-error");
@@ -107,7 +109,7 @@ export default function RegisterPage() {
         {
             type: "password",
             name: "password",
-            id: "passwprd",
+            id: "password", // Corrected here
             placeholder: "Enter password",
             label: "Password",
             required: true,
@@ -118,6 +120,14 @@ export default function RegisterPage() {
             id: "confirmPassword",
             placeholder: "Re-enter password",
             label: "Confirm Password",
+            required: true,
+        },
+        {
+            type: "text",
+            name: "institute",
+            id: "institute",
+            placeholder: "Enter institute",
+            label: "Institute",
             required: true,
         },
     ];
@@ -150,16 +160,16 @@ export default function RegisterPage() {
     ));
 
     return (
-        <div className="relarive">
-            <div className=" h-full flex items-center justify-center">
+        <div className="relative">
+            <div className="h-full flex items-center justify-center">
                 <div>
-                    <h2 className="font-semibold text-2xl text-white text-center my-4">
+                    <h2 className="font-semibold text-2xl text-white text-center">
                         Register
                     </h2>
                     <form
                         method="POST"
                         onSubmit={handleSubmit}
-                        className="bg-blue-100 p-5 rounded-lg shadow-lg "
+                        className="bg-blue-100 p-5 rounded-lg shadow-lg"
                     >
                         <div className="flex gap-2">
                             <div className="my-4">
@@ -217,7 +227,39 @@ export default function RegisterPage() {
                         </div>
                         {inputElements}
 
-                        <div className="m-2">Username = {inputs.userName}</div>
+                        {/* Radio Buttons for role selection */}
+                        <div className="my-4">
+                            <div className="relative">
+                                <label className="text-sm text-blue-900">
+                                    <span className="text-red-600">*</span>
+                                    Register as:
+                                </label>
+                            </div>
+                            <div className="flex gap-4">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="role"
+                                        value="participant"
+                                        checked={inputs.role === "participant"}
+                                        onChange={handleChange}
+                                    />
+                                    Participant
+                                </label>
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="role"
+                                        value="organizer"
+                                        checked={inputs.role === "organizer"}
+                                        onChange={handleChange}
+                                    />
+                                    Organizer
+                                </label>
+                            </div>
+                        </div>
+
+            
                         <div className="text-center">
                             <Button
                                 disabled={disabled}
